@@ -1,0 +1,91 @@
+package section07;
+
+import java.awt.BorderLayout;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+class JDiaPro extends JDialog{
+	
+	public TextField tf = new TextField(10);
+	public JButton b = new JButton("보내기");
+	
+	
+	
+	public JDiaPro(JFrame owner , String title , boolean value) {
+		super(owner , title , value);
+		
+		JPanel parentLayout = new JPanel(new BorderLayout());
+		
+		parentLayout.add(tf , BorderLayout.NORTH);
+		parentLayout.add(b , BorderLayout.CENTER);
+		
+		super.setContentPane(parentLayout);
+		super.setVisible(true);
+		super.pack();
+		super.setLocation(400,400);
+		
+		
+	}
+	
+	
+	
+	
+	
+}
+
+class JDiaProgram extends JFrame implements ActionListener{
+	
+	public TextField tf = new TextField(10);
+	public JButton b = new JButton("열기");
+	
+	
+	public JDiaProgram(String title) {
+		super(title);
+		
+		JPanel parentLayout = new JPanel(new BorderLayout());
+		
+		parentLayout.add(tf , BorderLayout.NORTH);
+		parentLayout.add(b , BorderLayout.CENTER);
+		
+		b.addActionListener(this);
+		
+				
+		
+		super.setContentPane(parentLayout);
+		super.setVisible(true);
+		super.pack();
+		super.setLocation(400,400);
+		super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		JDiaPro pro = new JDiaPro(this, "다이어로그", false);
+		
+	}
+	
+	
+	
+}
+
+
+
+
+
+public class JDiaPro01 {
+
+	public static void main(String[] args) {
+		JDiaProgram pro = new JDiaProgram("프로");
+		
+
+
+	}
+
+}

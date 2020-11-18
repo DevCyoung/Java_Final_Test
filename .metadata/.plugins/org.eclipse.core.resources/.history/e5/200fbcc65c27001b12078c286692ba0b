@@ -1,0 +1,70 @@
+package section07;
+
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.*;
+
+
+class ImagePro extends JFrame {
+	
+	
+	
+	String path = "Images";
+	
+	
+	
+	ImageIcon google = new ImageIcon(path + "daum.jpg");
+	ImageIcon naver = new ImageIcon(path + "namver.jpg");
+	ImageIcon daum = new ImageIcon(path + "daum.jpg");
+	
+	JButton b1 = new JButton(google);
+	
+	public ImagePro(String title) {
+		super(title);
+		
+		JPanel parentLayout = new JPanel(new BorderLayout());
+		
+		JPanel p1 = new JPanel();
+		
+		b1.setPressedIcon(naver);
+		b1.setPreferredSize(new Dimension(300,300));
+		
+		p1.add(b1);
+		
+		
+		parentLayout.add(p1);
+		super.add(parentLayout);
+		super.setVisible(true);
+		super.setSize(400,400);
+		super.setLocation(500,500);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+}
+
+
+
+public class ImageDemo01 {
+
+	public static void main(String[] args) {
+		ImagePro pro = new ImagePro("asd");
+		
+
+	}
+
+}
