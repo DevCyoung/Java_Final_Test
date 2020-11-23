@@ -39,7 +39,7 @@ class IconChanger extends JPanel implements MouseListener{
 		
 		super.add(b1 ,BorderLayout.NORTH);
 		super.add(b2 ,BorderLayout.CENTER);
-		super.add(b3, BorderLayout.SOUTH);	
+		super.add(b3, BorderLayout.SOUTH);
 		
 	}
 	
