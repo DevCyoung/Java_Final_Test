@@ -1,0 +1,121 @@
+package section08;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.*;
+
+
+
+class Vector{
+	
+	public int x;
+	public int y;
+	
+	public Vector() {}
+	public Vector(int x , int y) {
+		this.x =x;
+		this.y =y;
+	}
+	
+	
+	public static Vector subtract(Vector vec1 , Vector vec2) {
+		Vector newVec = new Vector();
+		newVec.x = vec2.x - vec1.x;
+		newVec.x = vec2.y - vec1.y;
+		return newVec;
+	}
+	
+}
+
+class CanvasPanel extends JPanel implements MouseListener{
+	
+	Image im;
+	public CanvasPanel() {
+		
+		setPreferredSize(new Dimension(800,800));
+		im = getToolkit().getImage("Images/apple.png");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.drawImage(im,0,0,null);
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		System.out.println("mouseClicked");
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		System.out.println("mousePressed");
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		System.out.println("mouseReleased");
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		System.out.println("mouseEntered");
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		System.out.println("mouseExited");
+		
+	}
+	
+	
+	
+}
+
+class ParentPanel extends JPanel{
+	
+	public ParentPanel() {
+		super.add(new CanvasPanel());
+	
+	}
+	
+}
+
+
+
+
+
+
+
+
+public class ImageMove {
+
+	public static void main(String[] args) {
+		JFrame f = new JFrame("asd");
+		f.setContentPane(new ParentPanel());
+		f.setVisible(true);
+		f.pack();
+		
+
+
+	}
+
+}

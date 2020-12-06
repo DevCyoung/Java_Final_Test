@@ -1,0 +1,85 @@
+package section08;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.MouseListener;
+
+import javax.swing.*;
+
+
+
+class Vector{
+	
+	public int x;
+	public int y;
+	
+	public Vector() {}
+	public Vector(int x , int y) {
+		this.x =x;
+		this.y =y;
+	}
+	
+	
+	public static Vector subtract(Vector vec1 , Vector vec2) {
+		Vector newVec = new Vector();
+		newVec.x = vec2.x - vec1.x;
+		newVec.x = vec2.y - vec1.y;
+		return newVec;
+	}
+	
+}
+
+class CanvasPanel extends JPanel{
+	
+	Image im;
+	public CanvasPanel() {
+		
+		setPreferredSize(new Dimension(300,300));
+		im = getToolkit().getImage("Images/apple.png");
+		System.out.println( im.getSource() );
+		
+		
+		
+		
+	}
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.drawImage(im,0,0,null);
+	}
+	
+	
+	
+}
+
+class ParentPanel extends JPanel{
+	
+	public ParentPanel() {
+		super.add(new CanvasPanel());
+	
+	}
+	
+}
+
+
+
+
+
+
+
+
+public class ImageMove {
+
+	public static void main(String[] args) {
+		JFrame f = new JFrame("asd");
+		f.setContentPane(new ParentPanel());
+		f.setVisible(true);
+		f.pack();
+		
+
+
+	}
+
+}

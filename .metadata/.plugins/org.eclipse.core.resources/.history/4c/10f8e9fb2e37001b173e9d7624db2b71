@@ -1,0 +1,161 @@
+package section08;
+
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.*;
+
+
+
+class Vector{
+	
+	public int x;
+	public int y;
+	
+	public Vector() {}
+	public Vector(int x , int y) {
+		this.x =x;
+		this.y =y;
+	}
+	
+	
+	public static Vector subtract(Vector vec1 , Vector vec2) {
+		Vector newVec = new Vector();
+		newVec.x = vec2.x - vec1.x;
+		newVec.x = vec2.y - vec1.y;
+		return newVec;
+	}
+	
+}
+
+class CanvasPanel extends JPanel implements MouseMotionListener , MouseListener{
+	
+	Image im;
+	
+	int x;
+	int y;
+	
+	int oldX , oldY;
+	int newX , newY;
+	
+	
+	
+	public CanvasPanel() {
+		
+		setPreferredSize(new Dimension(800,800));
+		im = getToolkit().getImage("Images/apple.png");
+		super.addMouseMotionListener(this);
+		super.addMouseListener(this);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		g.drawImage(im ,x,y,null);
+		
+	}
+
+	
+	@Override
+	public void mousePressed(MouseEvent e) {
+		oldX = x;
+		oldY = y;
+		
+	}
+	
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		
+		
+		
+		newX = e.getX();
+		newY = e.getY();
+		
+		x =   newX - oldX ;
+		y =   newY -oldY ;		
+		repaint();
+	}
+	
+
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+	
+	
+	
+}
+
+class ParentPanel extends JPanel{
+	
+	public ParentPanel() {
+		super.add(new CanvasPanel());
+	
+	}
+	
+}
+
+
+
+
+
+
+
+
+public class ImageMove {
+
+	public static void main(String[] args) {
+		JFrame f = new JFrame("asd");
+		f.setContentPane(new ParentPanel());
+		f.setVisible(true);
+		f.pack();
+		
+
+
+	}
+
+}

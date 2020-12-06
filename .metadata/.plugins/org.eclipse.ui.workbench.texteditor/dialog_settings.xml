@@ -4,4 +4,10 @@
 		<item key="DIALOG_X_ORIGIN" value="729"/>
 		<item key="DIALOG_Y_ORIGIN" value="403"/>
 	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="BufferedImage bimg = null;"/>
+		<list key="findhistory">
+			<item value="BufferedImage bimg = null;"/>
+		</list>
+	</section>
 </section>

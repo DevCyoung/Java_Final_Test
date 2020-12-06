@@ -1,0 +1,92 @@
+package section08;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+
+
+public class ImageDemo extends Canvas{
+	private Image im1;
+	private Image im2;
+	
+	public ImageDemo() {
+		 
+		
+//		
+//		BufferedImage bimg = null;
+//		try {
+//			
+//			bimg = ImageIO.read(new File("Images/google.jpg"));
+//			
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		int width          = bimg.getWidth();
+//		int height         = bimg.getHeight();
+		
+		
+		setPreferredSize(new Dimension(500,500));
+		im1 = getToolkit().getImage("Images/apple.png");
+		im2 = getToolkit().getImage("Images/google.jpg");
+		
+		
+	}
+	@Override
+	public void paint(Graphics g) {
+		
+		BufferedImage bimg = null;
+		try {
+			bimg = ImageIO.read(new File("Images/apple.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		int width          = bimg.getWidth();
+		int height         = bimg.getHeight();
+		
+		g.drawImage(im2, 30, 30, width/2+30, height/2+30, 20 , 20 , width/2, height/2, null);
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+
+	public static void main(String[] args) {
+		Frame f = new Frame("Image Demo");
+		f.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			
+			}
+		});
+		f.add(new ImageDemo());
+		f.pack();
+		f.setVisible(true);
+		
+		
+
+	}
+
+}
