@@ -1,0 +1,63 @@
+package RunGame;
+
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+public class SpriteAnim extends JPanel implements ActionListener{
+	
+	public Image[] sprites;
+	public Image curSprite;
+	public int curNum = 0;
+	
+	public int posX;
+	public int posY;
+	
+	
+	
+	
+	public SpriteAnim(int delay , int posX , int posY) {
+		
+		Timer tm = new Timer(delay, this);
+		
+		tm.start();
+		
+		this.posX = posX;
+		this.posY = posY;
+		
+		
+		
+	}
+	
+	
+	
+	@Override
+	protected void paintComponent(Graphics g) {
+		g.drawImage(curSprite, posX, posY , null);
+	}
+	
+	private void changeSprite() {
+		
+		curSprite = sprites[++curNum];
+		
+		if( curNum >= sprites.length - 1) {
+			curNum = 0;
+		}
+		
+		repaint();
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		changeSprite();
+	}
+	
+	
+
+}

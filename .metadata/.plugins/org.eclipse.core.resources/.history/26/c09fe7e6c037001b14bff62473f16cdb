@@ -1,0 +1,22 @@
+package RunGame;
+
+import javax.swing.JFrame;
+
+
+
+
+public class GameSystem {
+
+	public static void main(String[] args) {
+		
+		
+		
+		JFrame f = new JFrame("Run Game");
+		f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		f.pack();
+		f.setVisible(true);
+		
+	}
+	
+
+}

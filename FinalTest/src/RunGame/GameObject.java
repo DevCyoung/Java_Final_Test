@@ -1,0 +1,17 @@
+package RunGame;
+
+public class GameObject {
+	
+	
+	public SpriteAnim sprAnim;
+	public Transform transform;
+	
+	
+	
+	
+	
+	
+	
+	
+
+}
