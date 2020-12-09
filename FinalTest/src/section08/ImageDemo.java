@@ -55,6 +55,7 @@ public class ImageDemo extends Canvas{
 	}
 	
 
+	
 	public static void main(String[] args) {
 		Frame f = new Frame("Image Demo");
 		f.addWindowListener(new WindowAdapter() {

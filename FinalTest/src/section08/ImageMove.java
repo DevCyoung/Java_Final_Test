@@ -47,18 +47,10 @@ class CanvasPanel extends JPanel implements MouseMotionListener , MouseListener{
 	public CanvasPanel() {
 		
 		setPreferredSize(new Dimension(800,800));
-		im = getToolkit().getImage("Images/apple.png");
+
+
 		super.addMouseMotionListener(this);
 		super.addMouseListener(this);
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 	}
 	
